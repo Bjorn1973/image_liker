@@ -101,35 +101,43 @@ body {
         font-size: 1rem;
         padding-bottom: 30px;
       }
-      .bookmark {
-        background-color: #e8edf0;
-        border: solid 1px #b1bfc8;
-        border-radius: 100%;
-        padding: 12px 8px 8px 11px;
-        margin: 13px 11px 13px 13px;
-      }
-      .bookmark,
-      .dots,
-      .download,
-      .seen {
-        text-decoration: none;
-        color: #b1bfc8;
-        font-size: 1.5rem;
-      }
-      .dots {
-        margin-right: 100px;
-      }
-
-      .seen__count,
-      .download__count {
-        color: #b1bfc8;
-        font-size: 1.5rem;
-        font-family: Open sans;
-        font-weight: 700;
-        padding-right: 14px;
+      nav {
+        ul {
+          @include flex(row, center, center);
+          li {
+            width: 60px;
+            padding-right: 14px;
+            &:nth-of-type(2) {
+              margin-right: auto;
+              padding-right: 0;
+            }
+            .bookmark {
+              background-color: #e8edf0;
+              border: solid 1px #b1bfc8;
+              border-radius: 100%;
+              padding: 12px 11px 8px 11px;
+              margin: 13px 11px 13px 13px;
+            }
+            .bookmark,
+            .dots,
+            .download,
+            .seen {
+              text-decoration: none;
+              color: #b1bfc8;
+              font-size: 1.5rem;
+            }
+            .seen__count,
+            .download__count {
+              color: #b1bfc8;
+              font-size: 1.5rem;
+              font-family: Open sans;
+              font-weight: 700;
+            }
+          }
+        }
       }
       &.active {
-        box-shadow: 10px 10px 50px #b1bfc8;
+        box-shadow: 0 10px 50px #b1bfc8;
         margin-top: 30px;
         .time {
           opacity: 100;
