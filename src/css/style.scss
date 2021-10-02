@@ -4,145 +4,149 @@
 @use "./base/fonts";
 @use "../icons/style.css";
 
+// Base styles
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  margin: 10px;
-  max-width: 1012px;
-  .container {
-    width: 100%;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 76px;
-    background-color: #fff;
-    width: 100%;
-    input {
-      display: inline-block;
+  margin: 0 auto;
+}
+
+#container {
+  width: 90%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+// Left section styles
+
+// navbar
+
+main {
+  width: 75%;
+}
+form {
+  height: 74px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  #wrapperforicon {
+    position: relative;
+    #searchbar {
       width: 575px;
       height: 40px;
-      background-color: #f3f7f8;
-      border: none;
-      border-radius: 25px;
-      position: absolute;
-      margin: 0 auto;
+      background-color: $searchbar;
+      border-radius: 22px;
+      border: none !important;
+      outline: none;
+      padding-left: 40px;
     }
-    .search {
-      position: relative;
+    .icon-search {
+      position: absolute;
+      top: 12px;
+      left: 17px;
       font-size: 1.5rem;
-      top: 2px;
-      left: -260px;
-      text-decoration: none;
-      color: #b8c6d1;
-      z-index: 1;
+      // margin: 12px 0 0 17px;
+      color: $icongrey;
     }
   }
-  main {
+}
+
+// cards
+
+main {
+  #cards {
+    background-color: $cardsbg;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    /*
+    The flexway
     display: flex;
-    justify-content: space-around;
-    background-color: #f9f9f9;
-    height: 487px;
-    div {
-      background-color: #fff;
-      width: 300px;
-      height: 375px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    */
+    justify-items: center;
+    padding: 32px;
+    .card {
+      /*
+      width: 30%;
+      */
+      transition: 200ms;
+      &:hover {
+        box-shadow: 5px 10px 22px -3px rgba(0, 0, 0, 0.27);
+        transform: translateY(-4px);
+      }
+      // min-width: 300px;
+      // height: 370px;
+      background-color: $white;
+      border-radius: 5px;
       overflow: hidden;
-      margin-top: 35px;
-      border-radius: 3px;
+      position: relative;
       .photo {
-        display: block;
-        width: 100%;
-        height: 226px;
-      }
-      .curve {
-        width: 70px;
-        background-color: transparent;
+        // height: 228px;
         position: relative;
-        top: -16px;
-        left: -10px;
-      }
-      .thumb {
-        border-radius: 100%;
-        background-color: yellow;
-        width: 26px;
-        height: 26px;
-        position: relative;
-        top: -15px;
-        left: -60px;
-      }
-      p {
-        padding: 0 15px;
-        font-family: Open sans;
-        width: 100%;
-        font-size: 1.45rem;
-        line-height: 1.7rem;
-        position: relative;
-        &::after {
-          content: "";
+        img {
           display: block;
-          background-color: #e8edf0;
-          width: 300px;
-          height: 2px;
-          margin-top: 13px;
+          object-fit: cover;
+          width: 100%;
+          height: 230px;
+        }
+        .curve {
+          display: block;
           position: absolute;
-          left: 0px;
-          top: 45px;
+          bottom: -12px;
+          left: -6px;
+          width: 70px;
+          height: auto;
+        }
+        .profile {
+          position: absolute;
+          bottom: -13px;
+          left: 17px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: orange;
         }
       }
-      .time {
-        display: block;
-        opacity: 0;
-        padding: 7px 15px;
-        color: #e8edf0;
-        font-size: 1rem;
-        padding-bottom: 30px;
+      .text {
+        height: 97px;
+        border-bottom: 2px solid $searchbar;
+        padding: 30px 18px 0 18px;
+        line-height: 1.9rem;
+        font-size: 1.3rem;
+        font-family: "open sans";
       }
-      nav {
-        ul {
-          @include flex(row, center, center);
-          li {
-            width: 60px;
-            padding-right: 14px;
-            &:nth-of-type(2) {
-              margin-right: auto;
-              padding-right: 0;
-            }
-            .bookmark {
-              background-color: #e8edf0;
-              border: solid 1px #b1bfc8;
-              border-radius: 100%;
-              padding: 12px 11px 8px 11px;
-              margin: 13px 11px 13px 13px;
-            }
-            .bookmark,
-            .dots,
-            .download,
-            .seen {
-              text-decoration: none;
-              color: #b1bfc8;
-              font-size: 1.5rem;
-            }
-            .seen__count,
-            .download__count {
-              color: #b1bfc8;
-              font-size: 1.5rem;
-              font-family: Open sans;
-              font-weight: 700;
-            }
+      .likes {
+        padding: 8px 8px 8px 8px;
+        .starwrapper {
+          background-color: $searchbar;
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            color: $icongrey;
+            font-size: 1.2rem;
           }
         }
       }
-      &.active {
-        box-shadow: 0 10px 50px #b1bfc8;
-        margin-top: 30px;
-        .time {
-          opacity: 100;
-        }
-      }
     }
   }
+}
+
+// Right section styles
+
+aside {
+  background-color: $searchbar;
+  width: 23%;
 }

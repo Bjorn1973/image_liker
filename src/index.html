@@ -5,158 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>image-liker</title>
-    <!-- <link href="" rel="shortcut icon" type="image/x-icon" /> -->
   </head>
   <body>
     <include src="./symbol-defs.svg"></include>
-    <header class="container">
-      <a class="search" href="#">
+
+    <form>
+      <div id="wrapperforicon">
+        <input type="text" id="searchbar" value="reef" />
         <svg class="icon icon-search">
-          <use xlink:href="./icons/symbol-defs.svg#icon-search"></use>
+          <use href="#icon-search"></use>
         </svg>
-      </a>
-      <input type="text" />
-    </header>
-    <main class="container">
-      <div>
-        <img class="photo" src="./images/tiger.jpg" alt="" />
-        <img class="curve" src="./images/curve.svg" alt="" />
-        <img class="thumb" src="#" alt="" />
-        <p>
-          Mariko Kusumoto's Dream&#8209;like Textile Sculptures Echo a Luminous
-          Coral Reef
-        </p>
-        <span class="time">3 months ago</span>
-        <nav>
-          <ul>
-            <li>
-              <a class="bookmark" href="#">
-                <svg class="icon icon-bookmark">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-bookmark"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="dots" href="#">
-                <svg class="icon icon-dots-three-horizontal">
-                  <use
-                    xlink:href="./icons/symbol-defs.svg#icon-dots-three-horizontal"
-                  ></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="seen" href="#">
-                <svg class="icon icon-eye">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-eye"></use>
-                </svg>
-              </a>
-              <span class="seen__count">77</span>
-            </li>
-            <li>
-              <a class="download" href="#">
-                <svg class="icon icon-redo2">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-redo2"></use>
-                </svg>
-              </a>
-              <span class="download__count">673</span>
-            </li>
-          </ul>
-        </nav>
       </div>
-      <div class="active">
-        <img class="photo" src="./images/tiger.jpg" alt="" />
-        <img class="curve" src="./images/curve.svg" alt="" />
-        <img class="thumb" src="#" alt="" />
-        <p>
-          Mariko Kusumoto's Dream&#8209;like Textile Sculptures Echo a Luminous
-          Coral Reef
-        </p>
-        <span class="time">3 months ago</span>
-        <nav>
-          <ul>
-            <li>
-              <a class="bookmark" href="#">
-                <svg class="icon icon-bookmark">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-bookmark"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="dots" href="#">
-                <svg class="icon icon-dots-three-horizontal">
-                  <use
-                    xlink:href="./icons/symbol-defs.svg#icon-dots-three-horizontal"
-                  ></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="seen" href="#">
-                <svg class="icon icon-eye">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-eye"></use>
-                </svg>
-              </a>
-              <span class="seen__count">77</span>
-            </li>
-            <li>
-              <a class="download" href="#">
-                <svg class="icon icon-redo2">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-redo2"></use>
-                </svg>
-              </a>
-              <span class="download__count">673</span>
-            </li>
-          </ul>
-        </nav>
+    </form>
+    <div id="container">
+      <!-- <div class="loading">
+        <div class="finger finger-1">
+          <div class="finger-item"><span></span><i></i></div>
+        </div>
+        <div class="finger finger-2">
+          <div class="finger-item"><span></span><i></i></div>
+        </div>
+        <div class="finger finger-3">
+          <div class="finger-item"><span></span><i></i></div>
+        </div>
+        <div class="finger finger-4">
+          <div class="finger-item"><span></span><i></i></div>
+        </div>
+        <div class="last-finger">
+          <div class="last-finger-item"><i></i></div>
+        </div> -->
       </div>
-      <div>
-        <img class="photo" src="./images/tiger.jpg" alt="" />
-        <img class="curve" src="./images/curve.svg" alt="" />
-        <img class="thumb" src="#" alt="" />
-        <p>
-          Mariko Kusumoto's Dream&#8209;like Textile Sculptures Echo a Luminous
-          Coral Reef
-        </p>
-        <span class="time">3 months ago</span>
-        <nav>
-          <ul>
-            <li>
-              <a class="bookmark" href="#">
-                <svg class="icon icon-bookmark">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-bookmark"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="dots" href="#">
-                <svg class="icon icon-dots-three-horizontal">
-                  <use
-                    xlink:href="./icons/symbol-defs.svg#icon-dots-three-horizontal"
-                  ></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="seen" href="#">
-                <svg class="icon icon-eye">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-eye"></use>
-                </svg>
-              </a>
-              <span class="seen__count">77</span>
-            </li>
-            <li>
-              <a class="download" href="#">
-                <svg class="icon icon-redo2">
-                  <use xlink:href="./icons/symbol-defs.svg#icon-redo2"></use>
-                </svg>
-              </a>
-              <span class="download__count">673</span>
-            </li>
-          </ul>
-        </nav>
+      <main>
+        <section id="cards"></section>
+      </main>
+      <aside></aside>
+    </div>
+
+    <template>
+      <div class="card">
+        <div class="photo">
+          <img src="#CARD_IMAGE_URL" alt="#CARD_TEXT" />
+          <img class="curve" src="./images/curve.svg" alt="" />
+          <div class="profile"></div>
+        </div>
+        <div class="text">#CARD_TEXT</div>
+        <div class="likes">
+          <div class="starwrapper">
+            <svg class="icon icon-star-full">
+              <use href="#icon-star-full"></use>
+            </svg>
+          </div>
+        </div>
       </div>
-    </main>
+    </template>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
