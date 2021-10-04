@@ -37,3 +37,25 @@
   width: 100%;
   height: auto;
 }
+
+@mixin size($width: 5px, $height: 5px) {
+  width: $width;
+  height: $height;
+}
+
+@mixin c() {
+  zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin square($size: 5px) {
+  width: $size;
+  height: $size;
+}
