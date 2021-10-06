@@ -18,18 +18,32 @@ function showLoader() {
   grid.innerHTML = "";
   loader.style.display = "block";
   grid.style.display = "none";
-  searchfield.disabled = true;
+  searchField.disabled = true;
+  if (document.readyState === "complete") {
+    console.log("complete");
+    setTimeout(() => {
+      loader.style.display = "none";
+      grid.style.display = "grid";
+      searchField.disabled = false;
+      searchField.value = "";
+    }, 6000);
+  }
+  // setTimeout(() => {
+  //   loader.style.display = "none";
+  //   grid.style.display = "grid";
+  //   searchField.disabled = false;
+  // }, 10000);
 }
 
-function stopLoader() {
-  loader.style.display = "none";
-  grid.style.display = "block";
-  searchfield.disabled = false;
-}
+// const stopLoader = () => {
+//   loader.style.display = "none";
+//   grid.style.display = "grid";
+//   searchField.disabled = false;
+// };
 
 form.onsubmit = function (e) {
   e.preventDefault();
-  showLoader;
+  showLoader();
   const { value } = searchField;
   if (value.length > 2) {
     httpClient(`/search/photos?&query=${value}`).then((response) => {
@@ -43,5 +57,5 @@ form.onsubmit = function (e) {
         .join("");
     });
   }
-  stopLoader;
+  // stopLoader;
 };

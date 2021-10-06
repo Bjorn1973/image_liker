@@ -154,7 +154,7 @@ aside {
 // LOADING
 // ---------
 .loading {
-  // display: block;
+  display: none;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -170,43 +170,43 @@ aside {
     @include size(20px, 100%);
   }
   .finger-1 {
-    animation: finger-1-animation, 2s, infinite, ease-out;
+    animation: finger-1-animation 2s infinite ease-out;
 
     span {
-      animation: finger-1-animation-span, 2s, infinite, ease-out;
+      animation: finger-1-animation-span 2s infinite ease-out;
     }
     i {
-      animation: finger-1-animation-i, 2s, infinite, ease-out;
+      animation: finger-1-animation-i 2s infinite ease-out;
     }
   }
   .finger-2 {
-    animation: finger-2-animation, 2s, infinite, ease-out;
+    animation: finger-2-animation 2s infinite ease-out;
 
     span {
-      animation: finger-2-animation-span, 2s, infinite, ease-out;
+      animation: finger-2-animation-span 2s infinite ease-out;
     }
     i {
-      animation: finger-2-animation-i, 2s, infinite, ease-out;
+      animation: finger-2-animation-i 2s infinite ease-out;
     }
   }
   .finger-3 {
-    animation: finger-3-animation, 2s, infinite, ease-out;
+    animation: finger-3-animation 2s infinite ease-out;
 
     span {
-      animation: finger-3-animation-span, 2s, infinite, ease-out;
+      animation: finger-3-animation-span 2s infinite ease-out;
     }
     i {
-      animation: finger-3-animation-i, 2s, infinite, ease-out;
+      animation: finger-3-animation-i 2s infinite ease-out;
     }
   }
   .finger-4 {
-    animation: finger-4-animation, 2s, infinite, ease-out;
+    animation: finger-4-animation 2s infinite ease-out;
 
     span {
-      animation: finger-4-animation-span, 2s, infinite, ease-out;
+      animation: finger-4-animation-span 2s infinite ease-out;
     }
     i {
-      animation: finger-4-animation-i, 2s, infinite, ease-out;
+      animation: finger-4-animation-i 2s infinite ease-out;
     }
   }
   .finger-item {
@@ -254,7 +254,7 @@ aside {
     @include size(110%, 20px);
     border-radius: 0 5px 14px 0;
     background: #fff;
-    animation: finger-5-animation, 2s, infinite, linear;
+    animation: finger-5-animation 2s infinite linear;
 
     i {
       position: absolute;
